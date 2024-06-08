@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/conta.css">
+    <title>Sua conta</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><a href="procedimentos.html">Procedimentos</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="conta.html">Conta</a></li>
+                    <li><a href="login.html">Sair</a></li>
+                </ul>
+            </nav>
+    </header>
+    <div class="container">
+        <div class="form-image">
+            <img src="./img/analise-info.png" alt="image.png">
+        </div>
+        <div class="form">
+            <form action="login.php" method="post">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Informe seu ID</h1>
+                        <h2>Precisamos do seu ID cliente para conseguir realizar operações. Informe seu ID na caixinha abaixo. Não há conhecimento sobre seu ID? Clique em "<span>Descobrir meu ID</span>".</h2>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="id-user">Digite aqui seu ID cliente:    </label>
+                        <input id="id-user" type="number" name="id-user">
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button class="button-alterar-password">Alterar Senha</button>
+                    <button id="excluir" class="button-excluir-account">Excluir Conta</button>
+                    <button id="exibirId" class="exibir-id">Descobrir meu ID</button>
+                  </div>
+            </form>
+        </div>
+    </div>
+    <footer>
+    </footer>
+    <script src="./js/conta.js"></script>
+    <script src="./js/menu-button.js"></script>
+</body>
+</html>

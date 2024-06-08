@@ -1,0 +1,412 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+}
+.navbar {
+  background-color:#c76fb79b; /* Define a cor de fundo como transparente */
+  color: #fff;
+  padding: 30px 0;
+  position: relative; /* Torna a navbar fixa */
+  top: 0; /* Fixa a navbar no topo da tela */
+  width: 100%; /* Garante que a barra de navegação ocupe toda a largura da tela */
+  z-index: 1000; /* Garante que a navbar fique acima de outros elementos */
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: end;
+  margin: 0; /* Remove a margem padrão */
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  text-shadow: 0 2px 5px rgba(133, 133, 133, 0.95);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 140%;
+  padding: 30px;
+  transition: color 0.3s ease; /* Adiciona uma transição suave à mudança de cor */
+  position: relative; /* Define uma posição relativa para o link */
+}
+
+nav ul li a:hover {
+  color: #cd00a0; /* Altera a cor do texto ao passar o mouse sobre o link */
+}
+
+nav ul li a::after {
+  content: ''; /* Adiciona conteúdo ao pseudo-elemento */
+  position: absolute; /* Define uma posição absoluta em relação ao link */
+  bottom: 0; /* Posiciona o pseudo-elemento na parte inferior do link */
+  left: 0; /* Alinha o pseudo-elemento com o lado esquerdo do link */
+  width: 100%; /* Garante que o pseudo-elemento tenha a mesma largura do link */
+  height: 2px; /* Define a altura do traço */
+  background-color: transparent; /* Define a cor do traço como transparente por padrão */
+  transition: background-color 0.3s ease; /* Adiciona uma transição suave à mudança de cor do traço */
+}
+
+nav ul li a:hover::after {
+  background-color: #ff0cebdb; /* Altera a cor do traço ao passar o mouse sobre o link */
+}
+
+.menu-button {
+  display: none;
+}
+.header-bottom-side {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+}
+header {
+  background-image: url(../img/backgroundprodutos.png);
+  background-repeat: no-repeat;
+}
+
+.header-bottom-side-left {
+  padding: 10px;
+}
+
+.header-bottom-side-left h2 {
+  font-size: 3.1rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.header-bottom-side-left p {
+  line-height: 2.0rem;
+  margin-bottom: 1.0rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #d4d4d4;
+  font-size: 100%;
+}
+
+.header-bottom-side-left button {
+  background-color: #00000054;
+  color: aliceblue;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 3.8rem;
+  font-weight: 500;
+  font-size: 1.3rem;
+  transition: all 0.2s;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-bottom-side-left button:hover {
+  background-color: #000000db;
+}
+
+.header-bottom-side-right {
+  display: flex;
+  flex-basis: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-bottom-side-right img {
+  width: 115%;
+}
+
+/* Abaixo estilizando a main */
+
+main {
+  padding: 60px;
+}
+
+/* Abaixo estilizando os produtos no website */
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+span[id="negrito"] {
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  font-size: 130%;
+}
+
+#produtos-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.produtos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.produtos-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 calc(33% - 20px);
+  max-width: calc(33% - 20px);
+}
+
+.produtos-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.produtos-card img {
+  width: 100%;
+  height: auto;
+}
+
+.produtos-card span {
+  display: block;
+  text-align: center;
+  margin: 10px 0;
+  font-weight: bold;
+  color: #555;
+}
+
+.produtos-card p {
+  padding: 0 15px;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.btn-container {
+  text-align: center;
+  padding: 10px 15px 20px;
+}
+
+.btn-container button {
+  background-color: #a44b85;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-container button:hover {
+  background-color: #442339;
+  transform: scale(1.05);
+}
+
+/* Estilos para listas não ordenadas com IDs específicos */
+#produtos ul,
+#carrinhos ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilos para itens de lista com IDs específicos */
+#produtos li,
+#carrinho li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+/* Estilos para imagens dentro de itens de lista de produtos */
+#produtos li img {
+  max-height: 50px;
+  margin-right: 10px;
+}
+
+/* Estilos para imagens dentro de itens de lista de carrinho */
+#carrinho li img {
+  max-height: 30px;
+  margin-right: 10px;
+}
+
+/* Estilos para o carrinho */
+#carrinho {
+  display: none;
+  position: fixed;
+  top: 50px;
+  right: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 999;
+  box-shadow: 10px 0px 10px #2c2c2c;
+}
+
+/* Estilos para o título do carrinho */
+#carrinho h2 {
+  margin-bottom: 10px;
+  color: #292929;
+}
+
+/* Estilos para o total do carrinho */
+#total-carrinho {
+  font-weight: bold;
+}
+
+#carrinho p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  font-weight: bold;
+}
+
+/* Estilizando a label cupom */
+label[id="label-cupom"] {
+  font-family: Arial, sans-serif;
+  color: #442339;
+  font-weight: bold;
+}
+.itens {
+  display: flex;
+  flex-direction: column; /* Alinha os itens em uma coluna dentro de cada item */
+  align-items: center; /* Centraliza os itens horizontalmente dentro de cada item */
+  margin: 0 20px; /* Espaçamento entre os itens */
+}
+
+.itens img {
+  max-width: 270px; /* Aumenta a largura da imagem */
+  height: auto;
+  margin-bottom: 20px; /* Espaço entre a imagem e o botão */
+  border-radius: 10px;
+}
+.menu-content {
+  width: 100%;
+  max-width: 1200px; /* Define uma largura máxima */
+  height: 400px; /* Aumenta a altura */
+  display: flex;
+  flex-direction: row; /* Alinha os itens em uma linha */
+  align-items: center; /* Centraliza os itens verticalmente */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  padding: 1rem;
+  background-color: #ffffff; /* Cor de fundo */
+  margin: 5px auto; /* Centraliza a div */
+}
+
+.itens button {
+  width: 300px;
+  padding: 5px;
+  background-color:  #ffffff;;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease; /* Adiciona uma transição suave à mudança de cor */
+  color:#9a4b7d;
+  font-family: "Poetsen One", sans-serif;
+  font-size: 30px;
+  border: 1px solid rgb(215, 215, 215);
+}
+
+.itens button:hover {
+  background-color:  #ff7dcf;; /* Cor diferente ao passar o mouse */
+}
+
+footer {
+  background-color: #442339;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  bottom: 0;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (max-width: 800px) {
+  /* Tornando o website responsivo */
+  .produtos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+  }
+
+  /* Estilos para os cartões de produtos */
+  .produtos-card {
+    width: 100%; /* Largura do cartão próxima das extremidades da tela */
+    margin-bottom: 20px; /* Margem inferior */
+  }
+
+  /* Estilos para as imagens dentro dos cartões de produtos */
+  .produtos-card img {
+    max-width: 100%; /* Largura máxima da imagem */
+    height: auto; /* Altura automática para manter a proporção */
+  }
+
+  /* Estilos para o contêiner de botões */
+  .btn-container {
+    margin-top: 10px; /* Margem superior */
+  }
+
+  /* Estilos para o carrinho */
+  #carrinho {
+    margin-top: 10px; /* Margem superior */
+  }
+
+  /* Estilos para o título do carrinho */
+  #carrinho h2 {
+    margin-bottom: 5px; /* Margem inferior */
+  }
+
+  /* Estilos para a lista dentro do carrinho */
+  #lista-carrinho {
+    padding-left: 0; /* Remove o padding à esquerda da lista */
+  }
+
+  /* Ajustes para o logotipo */
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  /* Exibição do botão do menu em telas menores */
+  .menu-button {
+    display: block;
+  }
+
+  /* Ajustes para a seção inferior do cabeçalho */
+  .header-bottom-side {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 4rem;
+  }
+
+  /* Estilos para o menu de navegação em telas menores */
+  nav {
+    position: absolute;
+    background-color: #2c2c2c;
+    width: 100%;
+    top: 47px;
+    display: none;
+  }
+
+  /* Exibição do menu de navegação quando ativado */
+  .show-menu nav {
+    display: block;
+  }
+
+  /* Ajustes para a lista de navegação */
+  nav ul {
+    flex-direction: column;
+  }
+
+  /* Ajustes para os itens da lista de navegação */
+  nav ul li {
+    text-align: center;
+    padding: 0.8rem;
+  }
+}

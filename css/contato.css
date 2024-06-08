@@ -1,0 +1,100 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #b19c42; /* cor ao passar o mouse por cima */
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+.mapsBox {
+    position: absolute; /* Posição relativa para permitir sobreposição */
+    margin-bottom: 20px; /* Espaçamento inferior */
+    left: 950px;
+    top: 200px;
+}
+
+.mapsBox iframe {
+    width: 250%; /* Largura do mapa */
+    height: 450px; /* Altura do mapa */
+
+}
+
+/* Estilo para o link do WhatsApp */
+.whatsapp-fixo {
+    position: absolute;
+    left: 1850px;
+    top: 825px; /* Ajuste conforme necessário */
+}
+a[class="direitos-autorais"]{
+    position: absolute;
+    left: 650px;
+    top: 200px;
+    color: black;
+}
+div[class="texto-contato"]{
+font-family: Arial, Helvetica, sans-serif;
+
+
+
+}
+button {
+    position: absolute;
+    background-color: #b19c42; /* cor ao passar o mouse por cima */
+    left: 670px;
+    top: 600px;
+    border: 0px;
+    border-radius: 20px;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #ffee00;
+    transform: scale(1.1); /* Aumenta o tamanho do botão em 10% ao passar o mouse por cima */
+}
+
+/* Estilo para o rodapé */
+footer {
+    background-color: #b19c42; /* cor ao passar o mouse por cima */
+    color: #fff;
+    padding: 90px;
+    position: fixed;
+    bottom: 50px;
+    width: 100%;
+}
+@media screen and (max-width: 600px) {
+    main {
+        max-width: 300px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    main {
+        max-width: 250px;
+    }
+}

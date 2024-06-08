@@ -1,0 +1,339 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #ffffff;
+    overflow-x: hidden; /* Evita a barra de rolagem horizontal */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    background-color: #c76fb79b; /* Define a cor de fundo como transparente */
+    color: #fff;
+    padding: 20px 0;
+    position: fixed; /* Torna a navbar fixa */
+    top: 0; /* Fixa a navbar no topo da tela */
+    width: 100%; /* Garante que a barra de navegação ocupe toda a largura da tela */
+    z-index: 1000; /* Garante que a navbar fique acima de outros elementos */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: end;
+    margin: 0; /* Remove a margem padrão */
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    text-shadow: 0 2px 5px rgba(133, 133, 133, 0.95);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 130%;
+    padding: 30px;
+    transition: color 0.3s ease; /* Adiciona uma transição suave à mudança de cor */
+    position: relative; /* Define uma posição relativa para o link */
+}
+
+nav ul li a:hover {
+    color: #cd00a0; /* Altera a cor do texto ao passar o mouse sobre o link */
+}
+
+nav ul li a::after {
+    content: ''; /* Adiciona conteúdo ao pseudo-elemento */
+    position: absolute; /* Define uma posição absoluta em relação ao link */
+    bottom: 0; /* Posiciona o pseudo-elemento na parte inferior do link */
+    left: 0; /* Alinha o pseudo-elemento com o lado esquerdo do link */
+    width: 100%; /* Garante que o pseudo-elemento tenha a mesma largura do link */
+    height: 2px; /* Define a altura do traço */
+    background-color: transparent; /* Define a cor do traço como transparente por padrão */
+    transition: background-color 0.3s ease; /* Adiciona uma transição suave à mudança de cor do traço */
+}
+
+nav ul li a:hover::after {
+    background-color: #ff0cebdb; /* Altera a cor do traço ao passar o mouse sobre o link */
+}
+
+.logo {
+    color: #1f1f1f;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.logo span {
+    color: aliceblue;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.header-bottom-side {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    padding: 1rem;
+    background-image: url(../img/esteticawallpaper.png);
+    background-size: cover; /* Faz a imagem ocupar toda a área */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita a repetição da imagem */
+    height: 100vh; /* Define a altura para 100% da altura da tela */
+    width: 100%; /* Garante que a largura seja 100% */
+    margin: 0; /* Remove margens */
+    overflow: hidden; /* Evita overflow */
+    box-shadow: 0 2px 5px rgba(118, 118, 118, 0.95);
+}
+
+.header-bottom-side-left {
+    height: 100%;
+    flex-basis: 50%;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center; /* Centraliza o texto horizontalmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-bottom-side-left h2 {
+    font-size: 3.2rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #ffffff;
+}
+
+.header-bottom-side-left button {
+    background-color: #ff76cf50;
+    border: none;
+    cursor: pointer;
+    padding: 0.8rem;
+    color: aliceblue;
+    width: 60%;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+    margin-top: 1.5rem; /* Adiciona margem superior para espaçamento */
+}
+
+.header-bottom-side-left button:hover {
+    background-color: #5a2b49;
+}
+
+.header-bottom-side-left p {
+    line-height: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #e9e9e9;
+    font-size: 130%;
+}
+
+span[id="css-negrito"] {
+    font-weight: bold;
+    color: rgb(34, 34, 34);
+}
+
+span[id="whatsapp"] {
+    color: rgb(44, 155, 49);
+    font-weight: bold;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Altera para coluna */
+    align-items: center; /* Centraliza o conteúdo */
+    width: 100%;
+    max-width: 100vw; /* Garante que o main não ultrapasse a largura da viewport */
+    overflow: hidden; /* Evita overflow horizontal */
+    padding: 1rem;
+}
+
+.menu-content {
+    width: 100%;
+    max-width: 1200px; /* Define uma largura máxima */
+    height: 400px; /* Aumenta a altura */
+    display: flex;
+    flex-direction: row; /* Alinha os itens em uma linha */
+    align-items: center; /* Centraliza os itens verticalmente */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    padding: 1rem;
+    background-color: #ffffff; /* Cor de fundo */
+    margin: 5px auto; /* Centraliza a div */
+}
+
+.itens {
+    display: flex;
+    flex-direction: column; /* Alinha os itens em uma coluna dentro de cada item */
+    align-items: center; /* Centraliza os itens horizontalmente dentro de cada item */
+    margin: 0 10px; /* Espaçamento entre os itens */
+}
+
+.itens img {
+    max-width: 310px; /* Aumenta a largura da imagem */
+    height: auto;
+    margin-bottom: 20px; /* Espaço entre a imagem e o botão */
+    border-radius: 10px;
+}
+
+.itens button {
+    width: 300px;
+    padding: 5px;
+    background-color: #000000ce;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Adiciona uma transição suave à mudança de cor */
+    color: #ffffffce;
+    font-family: "Poetsen One", sans-serif;
+    font-size: 30px;
+    border: 1px solid rgb(215, 215, 215);
+}
+
+.itens button:hover {
+    background-color: #000000e7; /* Cor diferente ao passar o mouse */
+}
+
+.procedimentos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo */
+    width: 100%;
+    max-width: 1200px; /* Define uma largura máxima */
+    padding: 1rem;
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+}
+
+.procedimentos-card {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px; /* Define uma largura máxima */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.procedimentos-card img {
+    max-width: 350px; /* Aumentando o tamanho da imagem */
+    height: auto;
+    margin-right: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease; /* Adicionando uma transição suave */
+}
+
+.procedimentos-card img:hover {
+    transform: scale(1.1); /* Aplicando o efeito de zoom ao passar o mouse */
+}
+
+.procedimentos-card div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    flex: 1; /* Faz com que o div ocupe o espaço restante */
+}
+
+.procedimentos-card span,
+.procedimentos-card p {
+    margin: 0;
+    padding: 5px 0;
+    font-size: 1.2em; /* Aumentando o tamanho da fonte para os spans e parágrafos */
+}
+
+.procedimentos-card .btn-container {
+    margin-left: auto;
+    align-self: flex-end;
+}
+
+.procedimentos-card button {
+    padding: 10px 30px;
+    background-color: #50cf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em; /* Aumentando o tamanho da fonte do botão */
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Adicionando uma transição suave na cor de fundo */
+    width: 70%;
+    margin-left: 100px;
+}
+
+
+.procedimentos-card button:hover {
+    background-color: #005621; /* Alterando a cor de fundo ao passar o mouse */
+    animation: shake 0.5s ease; /* Adicionando a animação de tremer */
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(-2px, 0);
+    }
+    50% {
+        transform: translate(2px, 0);
+    }
+    75% {
+        transform: translate(-2px, 0);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+span[id="produto-name"] {
+    font-family: "Poetsen One", sans-serif;
+    font-size: 50px;
+    color: #ff76cf;
+    padding-bottom: 100px;
+}
+
+span[id="preco"] {
+    font-size: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+p[id="desc-produto"]{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+}
+
+.search-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    height: 100px; /* Ajuste a altura conforme necessário */
+}
+
+.search-bar input {
+    padding: 20px 30px 10px 70px; /* Adiciona espaço para o ícone */
+    width: 50%;
+    font-size: 16px; /* Ajuste o tamanho da fonte do input, se necessário */
+    background: url('../img/lupa.png') no-repeat 10px center; /* Ajuste o caminho da imagem */
+    background-size: 40px 40px; /* Ajusta o tamanho da imagem */
+    border-color: white;
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+    border-radius: 10px;
+    border-color: #000000;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+}
+
+/* Para alterar o tamanho da fonte do placeholder */
+.search-bar input::placeholder {
+    font-size: 25px; /* Ajuste o tamanho da fonte do placeholder conforme necessário */
+    color: rgba(70, 70, 70, 0.777);
+}

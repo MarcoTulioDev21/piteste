@@ -1,0 +1,103 @@
+/* Estilos gerais */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('./img/papel-parede-listrado-tons-de-rosa-fundo-branco-papel-de-parede.webp');
+    /* outras propriedades opcionais */
+    background-size: cover; /* ajusta o tamanho da imagem para cobrir todo o corpo */
+    background-position: center; /* posiciona a imagem no centro do corpo */
+    background-repeat: no-repeat; /* evita repetição da imagem */
+}
+
+
+header {
+    background-color: #ff76cf; /* cor ao passar o mouse por cima */
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  
+}
+
+
+main {
+    flex: 1;
+    text-align: center;
+    padding: 150px;
+}
+
+/* Estilo para o rodapé */
+footer {
+
+    background-color: #ff76cf; /* cor ao passar o mouse por cima */
+    padding: 20px; /* Espaçamento interno */
+   
+}
+
+.whatsapp-fixo {
+    position: absolute;
+    left: 1650px;
+    top: 1065px; /* Ajuste conforme necessário */
+}
+
+
+.mapsBox {
+    position: relative; /* Posição relativa para permitir sobreposição */
+    margin-bottom: 20px; /* Espaçamento inferior */
+    left: 100px;
+}
+
+.mapsBox iframe {
+    width: 40%; /* Largura do mapa */
+    height: 480px; /* Altura do mapa */
+    left: 100px;
+  
+   
+}
+
+h1{
+    font-size: 300%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+h2{
+    font-size: 150%;
+    color: #333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

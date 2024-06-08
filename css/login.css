@@ -1,0 +1,158 @@
+/* Variáveis de cor */
+:root {
+    --primary-color: #ff76cf;
+    --primary-hover-color: #ff4ebc;
+    --background-color: #f7f7f7;
+    --text-color: #333;
+    --navbar-bg-color: #c76fb79b;
+    --link-hover-color: #cd00a0;
+    --link-underline-color: #ff0cebdb;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo geral do corpo */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.logo {
+    color: #1f1f1f;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding-top: 25px; 
+    padding-left: 20px;
+}
+.logo span {
+    color: rgb(173, 22, 136);
+    text-shadow: 9px 9px 9px rgba(0, 0, 0, 0.5);   
+}
+/* Navbar */
+.navbar {
+    background-color: var(--navbar-bg-color);
+    color: #fff;
+    padding: 30px 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: end;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.navbar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    text-shadow: 0 2px 5px rgba(133, 133, 133, 0.95);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 140%;
+    padding: 30px;
+    transition: color 0.3s ease;
+    position: relative;
+    
+}
+
+.navbar ul li a:hover {
+    color: var(--link-hover-color);
+}
+
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.navbar ul li a:hover::after {
+    background-color: var(--link-underline-color);
+}
+
+/* Seção de login */
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120vh;
+    padding-top: 80px; /* Ajuste para compensar a navbar fixa */
+}
+
+.login {
+    background-color: #fff;
+    padding: 40px 30px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.9);
+    border-radius: 15px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+.login p {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #000000;
+}
+
+.login label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #000000;
+    text-align: left;
+}
+
+.login input[type="email"],
+.login input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    border: 2px solid #ada9a9;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.login input[type="email"]:focus,
+.login input[type="password"]:focus {
+    border-color: #cd00a0;
+    outline: none;
+}
+
+.login input[type="submit"] {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 15px  190px;;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.login input[type="submit"]:hover {
+    background-color:#cd00a0;
+    transform: translateY(-2px);
+}
+
+.g-recaptcha {
+    margin: 10px 50px;
+}

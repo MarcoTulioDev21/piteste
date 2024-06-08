@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/produtos.css">
+    <title>Produtos</title>
+</head>
+<body>
+    <div class="navbar">
+        <nav>
+            <ul>
+                <li><a href="procedimentos.html">Procedimentos</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="conta.html">Conta</a></li>
+                <li><a href="login.html">Sair</a></li>
+            </ul>
+        </nav>
+    </div>
+    <header>
+        <div class="header-inner-content">
+            <div class="header-bottom-side">
+                <div class="header-bottom-side-left">
+                    <h2>Produtos</h2>
+                    <p>
+                      Permaneça nesta página para visualizar os produtos disponíveis em nossa loja, ou 
+                      <span id="negrito">clique no botão abaixo</span> e venha <span id="negrito">conhecer nossos procedimentos estéticos.</span> Há diversos
+                      procedimentos estéticos, procure o que necessitas!
+                    </p>
+                    <button>VER PROCEDIMENTOS &#8594;</button>
+                </div>
+                <div class="header-bottom-side-right">
+                    <img src="./img/estetica.png" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="menu-content">
+        <div class="itens">
+            <img src="./img/menu-sobrancelha.png" alt="">
+            <button id="descer-sobrancelha" onclick="scrollToProcedimentos()">CONFERIR</button>
+        </div>
+        <div class="itens">
+            <img src="./img/menu-sobrancelha.png" alt="">
+            <button id="descer-sobrancelha" onclick="scrollToProcedimentos()">CONFERIR</button>
+        </div>
+        <div class="itens">
+            <img src="./img/menu-sobrancelha.png" alt="">
+            <button id="descer-sobrancelha" onclick="scrollToProcedimentos()">CONFERIR</button>
+        </div>
+        <div class="itens">
+            <img src="./img/menu-sobrancelha.png" alt="">
+            <button id="descer-sobrancelha" onclick="scrollToProcedimentos()">CONFERIR</button>
+        </div>
+    </div>
+    <main>
+        <div id="produtos-container">
+            <h2 id="subtitle">Veja os produtos disponíveis em nossa loja.</h2>
+            <div class="produtos-container">
+                <div class="produtos-card">
+                    <img src="./img/creme-de-cabelo.png" alt="">
+                    <span>Creme de Cabelo</span>
+                    <span>R$ 69.90</span>
+                    <p id="desc-title">Descrição do Produto:</p>
+                    <p id="desc-produto">Pote de Creme Vult, creme especifico para cabelos. Tamanho em ML correspondente à 300ML. Especial para Cabelos 4A e 4C. Produto não oficial da loja.</p>
+                    <div class="btn-container">
+                        <button onclick="adicionarCarrinho('Creme de Cabelo', 69.90, './img/creme-de-cabelo.png')">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <div class="produtos-card">
+                    <img src="./img/creme-de-pele.png" alt="">
+                    <span>Creme de Pele</span>
+                    <span>R$ 49.90</span>
+                    <p id="desc-title">Descrição do Produto:</p>
+                    <p id="desc-produto">Pote de creme especifico para pele. Tamanho de 200ml e com duração de até 48h de proteção. Feito ao Leite, o NIVEA É perfeito para peles secas que precisam ser hidratas. Produto não oficial da loja.</p>
+                    <div class="btn-container">
+                        <button onclick="adicionarCarrinho('Creme de Pele', 49.90, './img/creme-de-pele.png')">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <div class="produtos-card">
+                    <img src="./img/kit-batom.png" alt="">
+                    <span>Kit Batom</span>
+                    <span>R$ 39.99</span>
+                    <p id="desc-title">Descrição do Produto:</p>
+                    <p id="desc-produto">Coleções de Batons femininos de diferentes cores. O produto irá vir com 5 unidades.     Adquira o kit com tons especiais de Vermelho, Vinho e Rosa. Produto não oficial da loja.</p>
+                    <div class="btn-container">
+                        <button onclick="adicionarCarrinho('Kit Batom', 39.99, './img/kit-batom.png')">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <div class="produtos-card">
+                    <img src="./img/kit-maquiagem.png" alt="">
+                    <span>Kit Maquiagem</span>
+                    <span>R$ 199.00</span>
+                    <p id="desc-title">Descrição do Produto:</p>
+                    <p id="desc-produto">Estojo de maquiagem, coleções de maquiagens e diferentes recursos para sua beleza. Adquira o kit especial e já disponível para uso. Produto não oficial da loja.</p>
+                    <div class="btn-container">
+                        <button onclick="adicionarCarrinho('Kit Maquiagem', 199.00, './img/kit-maquiagem.png')">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <div class="produtos-card">
+                    <img src="./img/kit-sombrancelhas.png" alt="">
+                    <span>Kit Sombrancelhas</span>
+                    <span>R$ 219.90</span>
+                    <p id="desc-title">Descrição do Produto:</p>
+                    <p id="desc-produto">Kit de ferramentas para reparo e manutenção de sombrancelhas. Faça suas sombrancelhas com esses produtos mágicos. Produto não oficial da loja.</p>
+                    <div class="btn-container">
+                        <button onclick="adicionarCarrinho('Kit Sombrancelha', 219.90, './img/kit-sombrancelhas.png')">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                <div class="produtos-card">
+                    <img src="./img/sabonete-facial.png" alt="">
+                    <span>Sabonete Facial</span>
+                    <span>R$ 29.90</span>
+                    <p id="desc-title">Descrição do Produto:</p>
+                    <p id="desc-produto">Sabonete Facial 210ml, especial para peles de rosto que precisam de hidratação. Produto não oficial da loja.</p>
+                    <div class="btn-container">
+                        <button onclick="adicionarCarrinho('Sabonete Facial', 29.90, './img/sabonete-facial.png')">Adicionar ao Carrinho</button>
+                </div>
+             </div>
+         </div>
+     </div>
+     <div id="carrinho-tab" onclick="alternarCarrinho()"></div>
+     <div id="carrinho">
+         <h2>Carrinho de Compras</h2>
+         <ul id="produtos-no-carrinho"></ul>
+         <input type="checkbox" id="cupom-desconto">
+         <label id="label-cupom" for="cupom-desconto">APLICAR CUPOM: "BELEZA" | 5% de desconto</label>
+         <p>Total: R$ <span id="total-carrinho">0</span></p>
+         <div id="paypal-button-container"></div>
+    </main>
+    <script src="https://www.paypal.com/sdk/js?client-id=AXTUsh_VKLZ6hXjQ500lcaKAOKIQ7CKFM-yohSFecpPlVNIj4Z-S8O3nSG2U3O7dDoB33rxN5YpMJtVb&currency=BRL"></script>
+    <script src="./js/produtos.js"></script>
+    <script src="./js/menu-button.js"></script>
+    <footer>
+        <p>&copy; Clínica estética Leia Lima - Todos os direitos reservados </p> 
+    </footer>
+</body>
+</html>
