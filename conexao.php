@@ -1,16 +1,12 @@
 <?php
-$host = "sql104.infinityfree.com"; // Endereço do servidor MySQL
-$usuario = "if0_36641142"; // Nome do Usuário MySQL
-$senha = "PaPAetS7O3IVlY"; // Senha do usuário MySQL
-$dbname = "if0_36641142_teste"; // Nome do banco de dados
+$host = "clinicabd.mysql.uhserver.com"; // Endereço do servidor MySQL
+$usuario = "clinicabduser"; // Nome do Usuário MySQL
+$senha = "MarcoRyanBD2024@"; // Senha do usuário MySQL
+$dbname = "clinicabd"; // Nome do banco de dados
 
 $conexao = mysqli_connect($host, $usuario, $senha, $dbname);
 
-if (!$conexao) {
-    // mysqli_connect_error() retorna uma string com o erro de conexão
-    die("Erro na conexão: " . mysqli_connect_error());
-} else {
-    echo "Conexão efetuada com sucesso <br>";
+if ($conexao->connect_error) {
+    die("Erro de conexão: " . $conexao->connect_error);
 }
-// Verificando a conexão
 ?>

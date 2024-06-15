@@ -1,34 +1,29 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Verificando se as informações estão sendo passadas através do metodo POST.
-
-    include("conexao.php");
     // Incluindo a conexão com o banco de dados
+    include("conexao.php");
 
-    if (isset($_POST['cadastrar'])) {
-        $nome = $_POST['nome'];
-        $endereco = $_POST['endereco'];
-        $email = $_POST['email'];
-        $senha = md5($_POST['senha']);
-        $telefone = $_POST['telefone'];
+    // Recebendo os dados do formulário
+    $nome = $_POST['nome'];
+    $endereco = $_POST['endereco'];
+    $email = $_POST['email'];
+    $idade = $_POST['idade'];
+    $senha = md5($_POST['senha']); // Aplicando MD5 na senha recebida
+    $telefone = $_POST['telefone'];
 
+    // Criando a consulta SQL para inserção dos dados
+    $sql = "INSERT INTO clientes (nome, endereco, email, idade, senha, telefone) VALUES ('$nome','$endereco','$email','$idade','$senha','$telefone')";
 
-    // Pegando as variáveis através do método POST
-
-    $sql = "INSERT INTO clientes (nome, endereco, email, senha, telefone) VALUES ('$nome','$endereco','$email','$senha','$telefone')";
-      // Criando variável SQL para executar uma instrução SQL
-
-      if(mysqli_query($conexao, $sql)){
+    // Executando a consulta SQL
+    if(mysqli_query($conexao, $sql)){
         $id_cadastrado = mysqli_insert_id($conexao);
-        echo "Cadastro realizado! ID: $id_cadastrado    ||  Você será redirecionado em instantes";
-        header("refresh:3;url=produtos.html");
-      }else{
-        echo "ERRO: Não foi possível cadastrar o aluno." . mysqli_error($conexao);
-     }
-     // Verificando se a consulta está sendo bem sucedida.
+        echo "LEIA LIMA: Cadastro realizado! ID: $id_cadastrado    ||  Você será redirecionado em instantes";
+        header("refresh:3;url=login.html");
+    } else {
+        echo "ERRO: Não foi possível cadastrar-se." . mysqli_error($conexao);
+    }
 
-     }
-
+    // Fechando a conexão com o banco de dados
+    mysqli_close($conexao);
 }
-
 ?>

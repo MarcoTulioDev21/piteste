@@ -1,339 +1,515 @@
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    width: 100%;
-    background-color: #ffffff;
-    overflow-x: hidden; /* Evita a barra de rolagem horizontal */
-}
-
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+:root {
+  --primary-color: #ff76cf;
+  --primary-hover-color: #ff4ebc;
+  --background-color: #f7f7f7;
+  --text-color: #333;
+  --navbar-bg-color: #c76fb79b;
+  --link-hover-color: #cd00a0;
+  --link-underline-color: #ff0cebdb;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
+
+
+
+.header-inner-content {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .navbar {
-    background-color: #c76fb79b; /* Define a cor de fundo como transparente */
-    color: #fff;
-    padding: 20px 0;
-    position: fixed; /* Torna a navbar fixa */
-    top: 0; /* Fixa a navbar no topo da tela */
-    width: 100%; /* Garante que a barra de navegação ocupe toda a largura da tela */
-    z-index: 1000; /* Garante que a navbar fique acima de outros elementos */
+  background-color: var(--navbar-bg-color);
+  padding: 1rem;
+  position: relative;
+  padding: 30px 0;
+  width: 100%;
+  top: 0;
+  z-index: 99;
 }
-
+.navbar>div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /* Muda para flex-end para alinhar à direita */
+  position: relative;
+}
 nav ul {
-    list-style-type: none;
-    padding: 0;
-    text-align: end;
-    margin: 0; /* Remove a margem padrão */
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 nav ul li {
-    display: inline;
-    margin: 0 10px;
+  display: inline;
+  margin: 0 10px;
 }
-
 nav ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    text-shadow: 0 2px 5px rgba(133, 133, 133, 0.95);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 130%;
-    padding: 30px;
-    transition: color 0.3s ease; /* Adiciona uma transição suave à mudança de cor */
-    position: relative; /* Define uma posição relativa para o link */
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 140%;
+  padding: 30px;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.95);
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+.navbar ul li a:hover {
+  color: var(--link-hover-color);
+}
+.navbar ul li {
+  position: relative;
+  /* Adiciona posição relativa ao li */
+}
+.navbar ul li a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--link-underline-color);
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+}
+.navbar ul li a:hover::after {
+  width: 100%;
+  /* Expande a linha para a largura total do link */
+}
+.nav-icon-container {
+  display: flex;
+  align-items: center;
+}
+.nav-icon-container img {
+  width: 30px;
+  cursor: pointer;
+}
+.nav-icon-container img:first-child {
+  margin-right: 1rem;
+}
+.menu-button {
+  display: none;
 }
 
-nav ul li a:hover {
-    color: #cd00a0; /* Altera a cor do texto ao passar o mouse sobre o link */
-}
 
-nav ul li a::after {
-    content: ''; /* Adiciona conteúdo ao pseudo-elemento */
-    position: absolute; /* Define uma posição absoluta em relação ao link */
-    bottom: 0; /* Posiciona o pseudo-elemento na parte inferior do link */
-    left: 0; /* Alinha o pseudo-elemento com o lado esquerdo do link */
-    width: 100%; /* Garante que o pseudo-elemento tenha a mesma largura do link */
-    height: 2px; /* Define a altura do traço */
-    background-color: transparent; /* Define a cor do traço como transparente por padrão */
-    transition: background-color 0.3s ease; /* Adiciona uma transição suave à mudança de cor do traço */
-}
-
-nav ul li a:hover::after {
-    background-color: #ff0cebdb; /* Altera a cor do traço ao passar o mouse sobre o link */
-}
-
-.logo {
-    color: #1f1f1f;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.logo span {
-    color: aliceblue;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
 
 .header-bottom-side {
-    display: flex;
-    align-items: center;
-    justify-self: center;
-    padding: 1rem;
-    background-image: url(../img/esteticawallpaper.png);
-    background-size: cover; /* Faz a imagem ocupar toda a área */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita a repetição da imagem */
-    height: 100vh; /* Define a altura para 100% da altura da tela */
-    width: 100%; /* Garante que a largura seja 100% */
-    margin: 0; /* Remove margens */
-    overflow: hidden; /* Evita overflow */
-    box-shadow: 0 2px 5px rgba(118, 118, 118, 0.95);
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  padding: 1rem;
+  background-image: url(../img/esteticawallpaper.png);
+  background-size: cover;
+  /* Faz a imagem ocupar toda a área */
+  background-position: center;
+  /* Centraliza a imagem */
+  background-repeat: no-repeat;
+  /* Evita a repetição da imagem */
+  height: 100vh;
+  /* Define a altura para 100% da altura da tela */
+  width: 100%;
+  /* Garante que a largura seja 100% */
+  margin: 0;
+  /* Remove margens */
+  overflow: hidden;
+  /* Evita overflow */
+  box-shadow: 0 2px 5px rgba(118, 118, 118, 0.95);
 }
-
 .header-bottom-side-left {
-    height: 100%;
-    flex-basis: 50%;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center; /* Centraliza o texto horizontalmente */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  height: 100%;
+  flex-basis: 50%;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  /* Centraliza o texto horizontalmente */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
 .header-bottom-side-left h2 {
-    font-size: 3.2rem;
-    margin-bottom: 1.5rem;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: #ffffff;
+  font-size: 3.2rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #ffffff;
 }
-
 .header-bottom-side-left button {
-    background-color: #ff76cf50;
-    border: none;
-    cursor: pointer;
-    padding: 0.8rem;
-    color: aliceblue;
-    width: 60%;
-    font-size: 20px;
-    transition: background-color 0.3s ease;
-    margin-top: 1.5rem; /* Adiciona margem superior para espaçamento */
+  background-color: #ff76cf50;
+  border: none;
+  cursor: pointer;
+  padding: 0.8rem;
+  color: aliceblue;
+  width: 60%;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+  margin-top: 1.5rem;
+  /* Adiciona margem superior para espaçamento */
 }
-
 .header-bottom-side-left button:hover {
-    background-color: #5a2b49;
+  background-color: #5a2b49;
+}
+.header-bottom-side-left p {
+  line-height: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #ffffff;
+  font-size: 130%;
 }
 
-.header-bottom-side-left p {
-    line-height: 1.5rem;
-    margin-bottom: 1.5rem;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: #e9e9e9;
-    font-size: 130%;
-}
 
 span[id="css-negrito"] {
-    font-weight: bold;
-    color: rgb(34, 34, 34);
+  font-weight: bold;
+  color: rgb(34, 34, 34);
 }
-
 span[id="whatsapp"] {
-    color: rgb(44, 155, 49);
-    font-weight: bold;
+  color: rgb(44, 155, 49);
+  font-weight: bold;
 }
 
+/* Estilo para o container principal */
 main {
-    flex: 1;
-    display: flex;
-    flex-direction: column; /* Altera para coluna */
-    align-items: center; /* Centraliza o conteúdo */
-    width: 100%;
-    max-width: 100vw; /* Garante que o main não ultrapasse a largura da viewport */
-    overflow: hidden; /* Evita overflow horizontal */
-    padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+  padding: 1rem;
 }
 
-.menu-content {
-    width: 100%;
-    max-width: 1200px; /* Define uma largura máxima */
-    height: 400px; /* Aumenta a altura */
-    display: flex;
-    flex-direction: row; /* Alinha os itens em uma linha */
-    align-items: center; /* Centraliza os itens verticalmente */
-    justify-content: center; /* Centraliza os itens horizontalmente */
-    padding: 1rem;
-    background-color: #ffffff; /* Cor de fundo */
-    margin: 5px auto; /* Centraliza a div */
-}
-
-.itens {
-    display: flex;
-    flex-direction: column; /* Alinha os itens em uma coluna dentro de cada item */
-    align-items: center; /* Centraliza os itens horizontalmente dentro de cada item */
-    margin: 0 10px; /* Espaçamento entre os itens */
-}
-
-.itens img {
-    max-width: 310px; /* Aumenta a largura da imagem */
-    height: auto;
-    margin-bottom: 20px; /* Espaço entre a imagem e o botão */
-    border-radius: 10px;
-}
-
-.itens button {
-    width: 300px;
-    padding: 5px;
-    background-color: #000000ce;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease; /* Adiciona uma transição suave à mudança de cor */
-    color: #ffffffce;
-    font-family: "Poetsen One", sans-serif;
-    font-size: 30px;
-    border: 1px solid rgb(215, 215, 215);
-}
-
-.itens button:hover {
-    background-color: #000000e7; /* Cor diferente ao passar o mouse */
-}
-
+/* Estilo para os cards de procedimentos */
 .procedimentos-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centraliza o conteúdo */
-    width: 100%;
-    max-width: 1200px; /* Define uma largura máxima */
-    padding: 1rem;
-    box-sizing: border-box; /* Inclui padding e borda na largura total */
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Espaçamento entre os cards */
+  justify-content: center; /* Centraliza os cards horizontalmente */
+  background-color: #fffcfd; 
 }
 
 .procedimentos-card {
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    padding: 20px;
-    width: 100%;
-    max-width: 1200px; /* Define uma largura máxima */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: calc(50% - 20px); /* Cards ocupam metade da largura com espaçamento entre eles */
+  max-width: 400px; /* Largura máxima dos cards */
+  background-color: #ffffff; /* Cor de fundo rosa claro */
+  border: 2px solid #ffaadf; /* Cor da borda */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Centraliza o texto */
+  margin-bottom: 30px; /* Espaçamento inferior entre os cards */
 }
 
 .procedimentos-card img {
-    max-width: 350px; /* Aumentando o tamanho da imagem */
-    height: auto;
-    margin-right: 20px;
-    border-radius: 10px;
-    transition: transform 0.3s ease; /* Adicionando uma transição suave */
+  max-width: 80%; /* Imagens dentro dos cards ocupam até 80% da largura do card */
+  border-radius: 12px;
+  margin-bottom: 20px; /* Espaçamento inferior entre a imagem e o texto */
 }
 
-.procedimentos-card img:hover {
-    transform: scale(1.1); /* Aplicando o efeito de zoom ao passar o mouse */
-}
-
-.procedimentos-card div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    flex: 1; /* Faz com que o div ocupe o espaço restante */
-}
-
-.procedimentos-card span,
-.procedimentos-card p {
-    margin: 0;
-    padding: 5px 0;
-    font-size: 1.2em; /* Aumentando o tamanho da fonte para os spans e parágrafos */
-}
-
-.procedimentos-card .btn-container {
-    margin-left: auto;
-    align-self: flex-end;
-}
-
-.procedimentos-card button {
-    padding: 10px 30px;
-    background-color: #50cf50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1.1em; /* Aumentando o tamanho da fonte do botão */
-    font-weight: bold;
-    transition: background-color 0.3s ease; /* Adicionando uma transição suave na cor de fundo */
-    width: 70%;
-    margin-left: 100px;
-}
-
-
-.procedimentos-card button:hover {
-    background-color: #005621; /* Alterando a cor de fundo ao passar o mouse */
-    animation: shake 0.5s ease; /* Adicionando a animação de tremer */
-}
-
-@keyframes shake {
-    0% {
-        transform: translate(0, 0);
-    }
-    25% {
-        transform: translate(-2px, 0);
-    }
-    50% {
-        transform: translate(2px, 0);
-    }
-    75% {
-        transform: translate(-2px, 0);
-    }
-    100% {
-        transform: translate(0, 0);
-    }
+.procedimentos-card .produto-info {
+  margin-bottom: 15px; /* Espaçamento inferior entre as informações */
 }
 
 span[id="produto-name"] {
-    font-family: "Poetsen One", sans-serif;
-    font-size: 50px;
-    color: #ff76cf;
-    padding-bottom: 100px;
+  margin-top: 10px;
+  font-size: 1.4rem; /* Tamanho maior para o nome do produto */
+  font-weight: bold;
+  color: #d120a5; /* Cor rosa mais intensa para o nome do produto */
 }
 
 span[id="preco"] {
-    font-size: 40px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-p[id="desc-produto"]{
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: justify;
+  font-size: 1.2rem; /* Tamanho maior para o preço */
+  color: #428245; /* Cor rosa mais escura para o preço */
+  font-size: 30px;
+  font-weight: bold;
 }
 
+p[id="desc-produto"]{
+text-align: justify;
+}
+
+.procedimentos-card .desc-produto {
+  font-size: 1rem; /* Tamanho um pouco maior para a descrição */
+  line-height: 1.5;
+  color: #888;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center; /* Centraliza os botões */
+  margin-top: 15px; /* Espaçamento superior do container de botões */
+}
+
+#whatsapp-button {
+  padding: 12px 24px;
+  background-color: #e67acb; /* Cor rosa vívida para o botão */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none; /* Remove sublinhado padrão */
+  font-weight: bold;
+}
+
+#whatsapp-button:hover {
+  background-color: #cd00a0; /* Cor mais escura ao passar o mouse */
+}
+
+
+
 .search-bar {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #ffffff;
-    height: 100px; /* Ajuste a altura conforme necessário */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  height: 100px;
+  margin-top: 50px;
 }
 
 .search-bar input {
-    padding: 20px 30px 10px 70px; /* Adiciona espaço para o ícone */
-    width: 50%;
-    font-size: 16px; /* Ajuste o tamanho da fonte do input, se necessário */
-    background: url('../img/lupa.png') no-repeat 10px center; /* Ajuste o caminho da imagem */
-    background-size: 40px 40px; /* Ajusta o tamanho da imagem */
-    border-color: white;
-    box-sizing: border-box; /* Inclui padding e borda na largura total */
-    border-radius: 10px;
-    border-color: #000000;
-    color: rgb(0, 0, 0);
-    font-size: 25px;
+  padding: 20px 30px 10px 70px;
+  width: 50%;
+  font-size: 16px;
+  background: url('../img/lupa.png') no-repeat 10px center;
+  background-size: 40px 40px;
+  border-color: white;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border-color: #000000;
+  color: rgb(0, 0, 0);
+  font-size: 25px;
+}
+.search-bar input::placeholder {
+  font-size: 25px;
+  color: rgba(70, 70, 70, 0.777);
 }
 
-/* Para alterar o tamanho da fonte do placeholder */
-.search-bar input::placeholder {
-    font-size: 25px; /* Ajuste o tamanho da fonte do placeholder conforme necessário */
-    color: rgba(70, 70, 70, 0.777);
+footer {
+  background-color: #c76fb79b;
+  color: #ffffff;
+  padding: 30px 10px;
+  /* Espaçamento interno */
+  text-align: center;
+  /* Centraliza o texto */
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  /* Sombra para o rodapé */
+}
+
+.footer-container {
+  display: flex;
+  /* Usa flexbox para alinhar os itens */
+  justify-content: space-around;
+  /* Espaço igual entre os itens */
+  flex-wrap: wrap;
+  /* Permite que os itens sejam quebrados em várias linhas */
+  max-width: 1200px;
+  /* Largura máxima do contêiner */
+  margin: 0 auto;
+  /* Centraliza o contêiner */
+  padding: 20px 0;
+  /* Espaçamento interno */
+  border-top: 2px solid #000000;
+  /* Linha superior divisória */
+}
+
+.footer-container div {
+  flex: 1;
+  /* Cada coluna do rodapé ocupa a mesma largura */
+  min-width: 250px;
+  /* Largura mínima das colunas */
+  margin: 10px;
+  /* Margem interna entre as colunas */
+  text-align: center;
+  /* Alinha o texto à esquerda */
+}
+
+.footer-container h2 {
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #000000;
+  padding-bottom: 10px;
+  color: #000000;
+  text-align: center;
+}
+
+.footer-container p {
+  margin: 5px 0;
+  /* Espaçamento entre os parágrafos */
+  font-size: 1em;
+  /* Tamanho da fonte dos parágrafos */
+}
+
+.footer-container a {
+  color: #ffffff;
+  /* Cor dos links */
+  text-decoration: none;
+  /* Remove sublinhado dos links */
+  display: inline-block;
+  /* Exibe os links como bloco inline */
+  margin: 5px 0;
+  /* Espaçamento vertical dos links */
+  transition: color 0.3s, transform 0.3s;
+  /* Transição suave para a mudança de cor e transformação */
+}
+
+.footer-container a:hover {
+  color: #852b71;
+  /* Muda a cor do link ao passar o mouse */
+  text-decoration: underline;
+  /* Adiciona sublinhado ao passar o mouse */
+  transform: scale(1.05);
+  /* Aumenta ligeiramente o tamanho ao passar o mouse */
+}
+
+/* Estilização dos ícones de redes sociais */
+.social-icon {
+  width: 40px;
+  /* Largura do ícone */
+  height: 40px;
+  /* Altura do ícone */
+  background-size: contain;
+  /* Ajusta o tamanho da imagem de fundo para se ajustar ao contêiner */
+  margin: 0 20px;
+  /* Espaçamento horizontal entre os ícones */
+  display: inline-block;
+  /* Exibe os ícones como blocos inline */
+  transition: transform 0.3s;
+  /* Transição suave para a transformação */
+}
+
+.social-icon:hover {
+  transform: translateY(-5px);
+  /* Eleva o ícone ligeiramente ao passar o mouse */
+}
+
+/* Ícones de redes sociais específicos */
+.social-icon.instagram {
+  background-image: url('https://img.icons8.com/ios-filled/50/ffffff/instagram.png');
+  /* Ícone do Instagram */
+}
+
+/* Estilo da linha de direitos autorais */
+.footer-bottom {
+  margin-top: 20px;
+  /* Espaçamento superior para a linha inferior */
+  border-top: 1px solid #000000;
+  /* Linha superior divisória */
+  padding-top: 10px;
+  /* Espaçamento superior para a linha inferior */
+  font-size: 1.3em;
+  /* Tamanho da fonte para o texto de direitos autorais */
+  color: #000000;
+  /* Cor do texto de direitos autorais */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .procedimentos-card {
+    width: calc(100% - 20px); /* Cards ocupam toda a largura disponível */
+  }
+  .footer-container {
+    flex-direction: column;
+    /* Colunas do rodapé em linha única */
+    text-align: center;
+    /* Centraliza o texto em telas menores */
+  }
+
+  .footer-container div {
+    margin: 10px 0;
+    /* Espaçamento vertical entre as colunas */
+  }
+
+  .social-icon {
+    margin: 5px;
+    /* Reduz o espaçamento entre os ícones */
+  }
+  .navbar {
+    position: fixed;
+    background-color:#dfa4d0;
+  }
+
+  /* Exibição do botão do menu em telas menores */
+  .menu-button {
+    display: block;
+  }
+
+  /* Estilos para o menu de navegação em telas menores */
+  nav {
+    position: fixed;
+    background-color: #2c2c2c;
+    width: 100%;
+    top: 47px;
+    display: none;
+  }
+
+  /* Exibição do menu de navegação quando ativado */
+  .show-menu nav {
+    display: block;
+    background-color: #dfa4d0;
+    margin-top: 40px;
+  }
+
+  /* Ajustes para a lista de navegação */
+  nav ul {
+    flex-direction: column;
+  }
+
+  /* Ajustes para os itens da lista de navegação */
+  nav ul li {
+    text-align: center;
+    padding: 0.8rem;
+  }
+  .social-icon {
+    width: 10px; /* Reduz a largura dos ícones */
+    height: 30px; /* Reduz a altura dos ícones */
+    margin: 10px 10px; /* Reduz o espaçamento horizontal entre os ícones */
+  }
+  .search-bar {
+    height: 60px; /* Reduz a altura da barra de pesquisa para telas menores */
+  }
+
+  .search-bar input {
+    width: 80%; /* Aumenta a largura do input para 80% da largura disponível */
+    padding: 12px 16px 8px 40px; /* Ajusta o padding do input para telas menores */
+    font-size: 14px; /* Reduz o tamanho da fonte do input para telas menores */
+    background-size: 25px 25px; /* Ajusta o tamanho do ícone de busca para telas menores */
+  }
+
+  .search-bar input::placeholder {
+    font-size: 18px; /* Reduz o tamanho da fonte do placeholder para telas menores */
+  }
+}
+@media (max-width: 480px) {
+  .footer-container h2 {
+    font-size: 1.2em;
+    /* Reduz o tamanho da fonte do título */
+  }
+
+  .footer-container p,
+  .footer-container a {
+    font-size: 0.9em;
+    /* Reduz o tamanho da fonte dos parágrafos e links */
+  }
 }

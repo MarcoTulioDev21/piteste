@@ -8,17 +8,25 @@
     <title>Página de login</title>
 </head>
 <body>
-    <header>
-        <h1 class="logo">LEIA<span>LIMA</span></h1>
-        <nav class="navbar">
-            <ul>
-                <li><a href="index.html">Sair</a></li>
-            </ul>
-        </nav>
-    </header>
-
+    <div class="navbar show-menu">
+        <div class="header-inner-content">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="sobrenos.html">Sobre nós</a></li>
+                </ul>
+            </nav>
+            <div class="nav-icon-container">
+                <img src="./img/menu.png" class="menu-button" />
+            </div>
+        </div>
+    </div>
     <main>
         <section class="login-section">
+            <!-- Logo movida para fora da div .login -->
+            <h1 class="logo">CLÍNICA ESTÉTICA <span>LEIA LIMA</span></h1>
             <div class="login">
                 <form action="login.php" method="post">
                     <p>Faça login ou entre com sua conta Google!</p>
@@ -45,5 +53,6 @@
     </main>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="./js/login.js"></script>
+    <script src="./js/menu-button.js"></script>
 </body>
 </html>
